@@ -68,10 +68,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable docker virtualization
+  virtualization.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.carson = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker"]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
@@ -90,6 +93,19 @@
     # window managers and related stuff
     tmux
   ];
+
+  # Sets zsh as the default shell
+  users.defaultUserShell = pkgs.zsh;
+    programs.zsh = {
+      enable = true;
+      syntaxHighlighting.enable = true;
+      autosuggestions.enable = true;
+      ohMyZsh = {
+        enable = true;
+        plugins = [ "git" "sudo" "docker"];
+        theme = "agnoster";
+      };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
