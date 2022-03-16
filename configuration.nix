@@ -10,11 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4BCC-5AA4";
-    fsType = "vfat";
-  };
-
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
