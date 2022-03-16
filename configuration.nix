@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Defines all of the containers that run managed by systemd
+      ./container-configuration.nix
     ];
 
   # Use the GRUB 2 boot loader.
