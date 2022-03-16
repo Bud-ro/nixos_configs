@@ -63,8 +63,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable docker virtualization
-  virtualization.docker.enable = true;
+  # Enable docker virtuali**s**ation
+  virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.carson = {
